@@ -15,8 +15,8 @@ int check_cycle(listint_t *list)
 		return (0);
 
 
-	while(hare && hare->next)
-	{	
+	while (tortoise && hare && hare->next)
+	{
 		tortoise = tortoise->next;
 		hare = hare->next->next;
 		if (tortoise == hare)
