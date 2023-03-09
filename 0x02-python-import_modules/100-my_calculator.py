@@ -18,8 +18,8 @@ if __name__ == "__main__":
     elif (op == '*'):
         ans = mul(a, b)
     elif (op == '/'):
-        if (b == 0):
-            sys.exit(1)
+        # if (b == 0):
+        #     sys.exit(1)
         ans = div(a, b)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
