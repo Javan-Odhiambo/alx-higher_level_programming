@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 #define IS_PALINDROME 1
 #define NOT_PALINDROME 0
