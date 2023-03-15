@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    try:
-        return max(list(a_dictionary.keys()))
-    except AttributeError:
+    if isinstance(a_dictionary, dict):
+        try:
+            return max(list(a_dictionary.keys()))
+        except AttributeError:
+            return None
+    else:
         return None
