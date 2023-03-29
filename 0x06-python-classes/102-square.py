@@ -85,6 +85,7 @@ class Square:
             return True
         else:
             return False
+
     def __ge__(self, object):
         """Greater than or equal to operator overloading
 
