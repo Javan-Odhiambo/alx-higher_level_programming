@@ -7,4 +7,5 @@ def copy_list(lst):
         Returns:
             (list): Copy of the list l.
     """
-    return lst[:]
+    new = lst[:]
+    return new
