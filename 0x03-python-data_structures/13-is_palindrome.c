@@ -1,12 +1,12 @@
 #include "lists.h"
 
-#define IS_PALINDROME 1
-#define NOT_PALINDROME 0
+
 /**
  * is_palindrome - checks if a single linked list is a palindrome.
  * @head: Address of the head.
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
 */
+
 int is_palindrome(listint_t **head)
 {
 	listint_t **pointers;
@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
 	int middle = 0;
 
 	if (head == NULL || *head == NULL)
-		return (IS_PALINDROME);
+		return (1);
 
 	pointers = (listint_t **) malloc(sizeof(listint_t) * arr_size);
 	if (pointers == NULL)
@@ -41,8 +41,8 @@ int is_palindrome(listint_t **head)
 	for (int i = 0; i <= middle; i++)
 	{
 		if (pointers[i]->n != pointers[counter - i - 1]->n)
-			return (NOT_PALINDROME);
+			return (0);
 	}
 	free(pointers);
-	return (IS_PALINDROME);
+	return (1);
 }
