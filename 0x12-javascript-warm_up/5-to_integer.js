@@ -1,3 +1,3 @@
 #!/usr/bin/node
 
-console.log('My number:', (Number(process.argv[2]) | 0 || 'Not a number'));
+console.log('My number:', (parseInt(process.argv[2]) || 'Not a number'));
