@@ -4,6 +4,7 @@
 import sys
 import MySQLdb
 
+
 def main():
     username = sys.argv[1]
     password = sys.argv[2]
@@ -20,5 +21,7 @@ def main():
     for state in states:
         if state[1] == state_name:
             print(state)
+
+
 if __name__ == "__main__":
     main()

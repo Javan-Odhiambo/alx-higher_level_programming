@@ -4,6 +4,7 @@
 import sys
 import MySQLdb
 
+
 def main():
     username = sys.argv[1]
     password = sys.argv[2]
@@ -11,10 +12,10 @@ def main():
     state = sys.argv[4]
 
     query = """SELECT *
-    			FROM cities
-       			INNER JOIN states
-          		ON cities.state_id = states.id
-            	ORDER BY cities.id;"""
+                FROM cities
+                   INNER JOIN states
+                  ON cities.state_id = states.id
+                ORDER BY cities.id;"""
 
     db = MySQLdb.connect(user=username, passwd=password, db=database)
     cursor = db.cursor()
@@ -23,6 +24,7 @@ def main():
     for city in cities:
         if city[2] == state:
             print(city[2])
+
 
 if __name__ == "__main__":
     main()
