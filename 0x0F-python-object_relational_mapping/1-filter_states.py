@@ -1,25 +1,15 @@
 #!/usr/bin/python3
-""" lists all states from the database hbtn_0e_0_usa
+"""
+Lists all states with a name starting with N from the database hbtn_0e_0_usa.
+Usage: ./1-filter_states.py <mysql username> \
+                             <mysql password> \
+                             <database name>
 """
 import sys
 import MySQLdb
 
-
-def main():
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    query = "SELECT * FROM `states` ORDER BY `id`"
-
-    db = MySQLdb.connect(user=username, passwd=password, db=database)
-    cursor = db.cursor()
-    cursor.execute(query)
-    states = cursor.fetchall()
-
-    for state in states:
-        print(state)
-
-
 if __name__ == "__main__":
-    main()
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM `states` ORDER BY `id`")
+    [print(state) for state in c.fetchall() if state[1][0] == "N"]
