@@ -2,8 +2,8 @@
 
 const request = require('request');
 
-const url = 'https://swapi-api.alx-tools.com/api/films/';
-
+const url = process.argv[2] ?? '';
+const id = '18';
 request(url, (err, response, body) => {
   if (err) {
     console.log(err);
@@ -13,6 +13,6 @@ request(url, (err, response, body) => {
   const data = JSON.parse(body).results;
   const films = [];
   data.map(film => films.push(...film.characters));
-  const filtered = films.filter(el => el.endsWith('18/'));
+  const filtered = films.filter(el => el.endsWith(id + '/'));
   console.log(filtered.length);
 });
