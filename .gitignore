@@ -1,3 +1,6 @@
 *main*
 test*
 __pycache__
+**/node_modules/
+**/*.json
+**/*lock*

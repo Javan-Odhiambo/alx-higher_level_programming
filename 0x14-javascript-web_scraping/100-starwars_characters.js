@@ -14,10 +14,14 @@ request(url, (err, response, body) => {
     return;
   }
   const data = JSON.parse(body).characters;
-  data.map(characterUrl => {
+  data.map(characterUrl => (
     request(characterUrl, (err, response, body) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
       const ch = JSON.parse(body);
       console.log(ch.name);
-    });
-  });
+    })
+  ));
 });
